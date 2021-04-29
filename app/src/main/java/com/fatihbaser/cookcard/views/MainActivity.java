@@ -1,8 +1,10 @@
-package com.fatihbaser.cookcard;
+package com.fatihbaser.cookcard.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.fatihbaser.cookcard.R;
 
 public class MainActivity extends AppCompatActivity {
 
