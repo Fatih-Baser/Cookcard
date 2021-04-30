@@ -5,11 +5,11 @@
     <data>
         <variable
             name="product"
-            type="com.example.shoppingcart.models.Product" />
+            type="com.fatihbaser.cookcard.models.Product" />
 
         <variable
             name="shopInterface"
-            type="com.example.shoppingcart.adapters.ShopListAdapter.ShopInterface" />
+            type="com.fatihbaser.cookcard.adapters.ShopListAdapter.ShopInterface" />
 
     </data>
 
@@ -39,22 +39,9 @@
             android:layout_gravity="center"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
-        <TextView
-            android:id="@+id/priceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@{String.valueOf(product.price) + ` $`}"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
 
-        <TextView
-            android:id="@+id/availableTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@{product.available ? `Available` : `Out of stock`}"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-            android:textColor="@{product.available ? @color/textSecondary : @color/red}" />
+
+
 
         <Button
             android:id="@+id/addToCartButton"
@@ -62,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="Add to cart"
             android:layout_gravity="center"
-            android:enabled="@{product.available}"
+
             android:onClick="@{() -> shopInterface.addItem(product)}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
             style="@style/Widget.MaterialComponents.Button.TextButton" />

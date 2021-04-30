@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fatihbaser.cookcard.R;
+import com.fatihbaser.cookcard.databinding.FragmentShopFragmentsBinding;
 
 
 public class ShopFragments extends Fragment {
 
 
 
+   FragmentShopFragmentsBinding fragmentShopFragmentsBinding;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,8 @@ public class ShopFragments extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop_fragments, container, false);
+
+        fragmentShopFragmentsBinding=FragmentShopFragmentsBinding.inflate(inflater,container,false);
+        return fragmentShopFragmentsBinding.getRoot();
     }
 }
