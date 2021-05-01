@@ -2,6 +2,8 @@ package com.fatihbaser.cookcard.views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -13,9 +15,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.fatihbaser.cookcard.R;
+import com.fatihbaser.cookcard.models.CardItem;
+import com.fatihbaser.cookcard.viewmodels.ShopViewModel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    ShopViewModel shopViewModel;
 
     NavController navController;
     @Override
@@ -25,6 +32,18 @@ public class MainActivity extends AppCompatActivity {
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController);
+        shopViewModel = new ViewModelProvider(this).get(ShopViewModel.class);
+        shopViewModel.getCart().observe(this, new Observer<List<CardItem>>() {
+            @Override
+            public void onChanged(List<CardItem> cartItems) {
+                int quantity = 0;
+//                for (CardItem cartItem: cartItems) {
+//                    quantity += cartItem.getQuantity();
+//                }
+//                cardQuantity = quantity;
+//                invalidateOptionsMenu();
+            }
+        });
     }
 
     @Override
