@@ -17,7 +17,6 @@ public class ShopListAdapter extends ListAdapter<Product, ShopListAdapter.ShopVi
         super(Product.itemCallback);
         this.shopInterface = shopInterface;
     }
-
     @NonNull
     @Override
     public ShopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -62,6 +62,15 @@ public class Product {
                 getImageUrl().equals(product.getImageUrl());
     }
 
+
+    /*DiffUtil.Callbackliste indeksleme ve öğe farklılaştırma olmak üzere iki rol sunar.
+    ItemCallback bunlardan sadece ikincisini yönetir, bu da bir
+    diziye veya Listeye dizin oluşturan kodun sunum katmanından
+     ve içeriğe özgü farklı koddan ayrılmasına izin verir.
+     İki öğenin aynı verilere sahip olup olmadığını kontrol etmek için çağrılır.
+
+Bu bilgi, bir öğenin içeriğinin değişip değişmediğini tespit etmek için kullanılır.
+     */
     public static DiffUtil.ItemCallback<Product> itemCallback = new DiffUtil.ItemCallback<Product>() {
         @Override
         public boolean areItemsTheSame(@NonNull Product oldItem, @NonNull Product newItem) {
